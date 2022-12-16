@@ -1,24 +1,27 @@
 /* 
     The following CSS has been refactored to remove any redundant rules and to match the semantic tags, classes, and ids in the updated index.html file.
+    The CSS is organized in order which the first selector that is applying the rule appears.
 */
 
-/* Catch all for elements.*/
+/* Universal selector for all elements to have border-box and to set the padding and margin to 0.*/
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+/* The background of the page is set to be a light shade of gray. All text in the body will be set to white. */
 body {
     background-color: #d9dcd6;
     color: #ffffff;
 }
 
-/* The body and nav will have the same font. nav needed to be called due to being a child of header */
+/* The body and nav will have the same font. nav needed to be called due to being a child of header which is assigned a different font below. */
 body, nav {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+/* Header section background color */
 header {
     background-color: #2a607c;
 }
@@ -28,16 +31,17 @@ header, aside {
     padding: 20px;
 }
 
-/* The header and footer will have the same font. */
+/* The header and footer have the same font. */
 header, footer {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* Main heading font size set */
 h1 {
     font-size: 48px;
 }
 
-/* h1, li, and the main content all are formatted in line since there is content to be displayed in the same line as them. */
+/* Main heading, navigation links (in list), and the main content all are formatted inline since there is content to be displayed in the same line as them. */
 h1, li, main {
     display: inline-block;
 }
@@ -47,30 +51,35 @@ h1, li, main {
     color: #d9dcd6;
 }
 
+/* Navigation section with a padding at the top of 15px. */
 nav {
     padding-top: 15px;
 }
 
-/* The navigation and header in the footer have a font-size of 20px. */
+/* The navigation and header 2 in the footer have a size of 20px. */
 nav, footer h2 {
     font-size: 20px;
 }
 
-/* The navigation and aside section need a margin of 20px on the right. */
+/* The navigation and aside section have a margin of 20px on the right. */
 nav, aside {
     margin-right: 20px;
 }
 
+/* List of links have no bullet point. */
 ul {
     list-style-type: none;
 }
 
-/* The list items in the navigation and the image in the main section needed a margin of 25px */
-li, img.float-right{
+/* The links in the navigation and the image floating right in the main section needed a margin of 25px on their left.
+img.float-right is called here to be able to apply the margin to any other images that may be added in the future to the main section.
+Additionally, the float-right class is applied to the aside section as well and that does not need a left margin.
+*/
+li, img.float-right {
     margin-left: 25px;
 }
 
-/* Removed text-decoration for links and made link color to be same as body color even if it changes. */
+/* Removed text-decoration for links in the navigation and the link color to be same as body font color even if it changes. */
 a {
     text-decoration: none;
     color: inherit;
@@ -84,11 +93,13 @@ a {
     object-fit: cover;
 }
 
+/* Main content area is set have a width that is 75% of the containing block and a left margin. */
 main {
     width: 75%;
     margin-left: 20px;
 }
 
+/* Only the section in main will have these rules applied. */
 main section {
     margin-bottom: 20px;
     padding: 50px;
@@ -96,6 +107,7 @@ main section {
     background-color: #0072bb;
 }
 
+/* The images in the main section will have a max height of 200px. */
 main section img {
     max-height: 200px;
 }
@@ -106,10 +118,12 @@ section h2 {
     font-size: 36px;
 }
 
+/* Font size in paragraphs will be 16px. */
 p {
     font-size: 16px;
 }
 
+/* All elements with the float-left class will float left and have a margin of 25px on the right. */
 .float-left {
     float: left;
     margin-right: 25px;
@@ -120,37 +134,43 @@ p {
     float: right;
 }
 
+/* The aside area will have a width of 20% of the body, 100% height of the body height if specified (otherwise it is auto), and background color is set to #2589bd.*/
 aside {
     width: 20%;
     height: 100%;
     background-color: #2589bd;
 }
 
-/* Both the aside section and the footer will be pushed below all the elements with a float. */
+/* Both the aside area and the footer will be pushed below all the elements with a float. */
 aside, footer {
     clear: both;
 }
 
+/* The sections in the aside content area has a bottom margin of 32px to space it out from the next section. */
 aside section {
     margin-bottom: 32px;
 }
 
+/* Headers in the aside area are all h3 which are set to have a bottom margin of 10px. */
 h3 {
     margin-bottom: 10px;
 }
 
-/* h3 and the footer content need to be aligned in the center */
+/* h3 and the footer content are aligned in the center. */
 h3, footer {
     text-align: center;
 }
 
-/* Only the images in the aside section need these rules */
+/* Only the images in the aside section need to be a block element with 10px margins on the top and bottom, and auto calculated margin on the left and right.
+The maximum size of the width of the image is 150 px.
+*/
 aside section img {
     display: block;
     margin: 10px auto;
     max-width: 150px;
 }
 
+/* The footer has a padding of 30px and the text is black. */
 footer {
     padding: 30px;
     color: black;
